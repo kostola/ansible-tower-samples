@@ -1,0 +1,6 @@
+- name: Check Disks Sample
+  hosts: all
+  tasks:
+    - name: Check Disks
+      debug:
+        msg: "Check disks status"

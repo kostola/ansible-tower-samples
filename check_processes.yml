@@ -1,0 +1,6 @@
+- name: Check Processes Sample
+  hosts: all
+  tasks:
+    - name: Check Processes
+      debug:
+        msg: "Check processes status"
