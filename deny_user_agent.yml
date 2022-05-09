@@ -3,7 +3,7 @@
   tasks:
     - name: Add line to useragent.rules
       ansible.builtin.lineinfile:
-        path: /etc/nginx/useragent.rules
+        path: /home/vagrant/useragent.rules
         regexp: "^  ~{{ user_agent }}"
         insertafter: '^  default 0;'
         line: "  {{ user_agent }} 1;"
