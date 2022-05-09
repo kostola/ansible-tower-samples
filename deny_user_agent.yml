@@ -4,9 +4,9 @@
     - name: Add line to useragent.rules
       ansible.builtin.lineinfile:
         path: /home/vagrant/useragent.rules
-        regexp: "^  ~{{ user_agent }}"
+        regexp: "~{{ user_agent }}"
         insertafter: '^  default 0;'
-        line: "  {{ user_agent }} 1;"
+        line: "  ~{{ user_agent }} 1;"
 
     - name: Reload nginx configuration
       ansible.builtin.command: sudo systemctl reload nginx
