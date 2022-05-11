@@ -1,0 +1,11 @@
+- name: Allow User Agent
+  hosts: all
+  tasks:
+    - name: Remove line from useragent.rules
+      ansible.builtin.lineinfile:
+        path: /etc/nginx/useragent.rules
+        regexp: "{{ user_agent }} 1;"
+        state: absent
+
+    - name: Reload nginx configuration
+      ansible.builtin.command: sudo systemctl reload nginx
